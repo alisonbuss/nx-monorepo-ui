@@ -1,0 +1,48 @@
+
+version: '3.7'
+
+networks:
+  backend:
+    driver: bridge
+
+volumes:
+  vol_shared:
+    name: quickstart_mssql_vol_shared
+    driver: local
+    driver_opts:
+      type: none
+      # It is necessary that this directory already exists!
+      device: ${PWD}/volumes/shared
+      o: bind
+  vol_certificates:
+    name: quickstart_mssql_vol_certificates
+    driver: local
+    driver_opts:
+      type: none
+      # It is necessary that this directory already exists!
+      device: ${PWD}/volumes/certificates
+      o: bind
+
+services:
+  frontend_app:
+    image: image/frontend_app
+    container_name: ctn-frontend-app
+    hostname: frontend-app
+    domainname: local.domain.com
+    # environment:
+    #   DB_MSSQL_APPLY_DATABASE: 'Y'
+    #   DB_MSSQL_TZ: 'America/Sao_Paulo'
+    build:
+      context: ${PWD}/infrastructure
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - vol_shared:/app/volumes/shared
+      - vol_certificates:/app/volumes/certificates
+    ports:
+      - "4202:4202"
+    networks:
+      backend:
+        aliases:
+         - frontend-app
+         - frontend-app.local.domain.com
