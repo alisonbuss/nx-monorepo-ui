@@ -4,10 +4,47 @@
 
 $ npx create-nx-workspace --preset=empty --name=nx-monorepo-ui
 
+$ npm create nx-workspace
+npx: instalou 38 em 4.188s
+✔ Workspace name (e.g., org name)     · nx-monorepo-ui
+✔ What to create in the new workspace · angular
+✔ Application name                    · helloworld-angular
+✔ Default stylesheet format           · scss
+✔ Default linter                      · eslint
+✔ Use Nx Cloud? (Its free and doe...) · No
+
+$ npm create nx-workspace
+npx: instalou 38 em 3.932s
+✔ Workspace name (e.g., org name)     · nx-monorepo-ui
+✔ What to create in the new workspace · react
+✔ Application name                    · helloworld-react
+✔ Default stylesheet format           · scss
+✔ Use Nx Cloud? (Its free and doe...) · No
+
 $ cd ./nx-monorepo-ui
 
-$ 
 
+
+
+
+
+
+
+
+$ npm create nx-workspace
+
+
+
+
+
+
+
+
+
+$ npm install @nrwl/angular --save-dev
+
+$ ng g @nrwl/angular:app helloworld-angular
+ng g @nrwl/angular:app helloworld-react
 
 
 
