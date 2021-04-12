@@ -1,8 +1,0 @@
-
-## In process of translation...
-
-
-
-
-
-

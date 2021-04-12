@@ -1,7 +1,0 @@
-{
-  "extends": "../../tslint.json",
-  "rules": {
-    "directive-selector": [true, "attribute", "nxMonorepoDocker", "camelCase"],
-    "component-selector": [true, "element", "nx-monorepo-docker", "kebab-case"]
-  }
-}
