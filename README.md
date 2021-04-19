@@ -55,7 +55,6 @@ $ cd ./nx-monorepo-ui
 
 $ nx list
 # >  NX  Installed plugins:
-
 #   @nrwl/jest (builders,generators)
 #   @nrwl/linter (builders)
 #   @nrwl/workspace (builders,generators)
