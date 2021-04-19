@@ -55,7 +55,6 @@ $ cd ./nx-monorepo-ui
 
 $ nx list
 # >  NX  Installed plugins:
-
 #   @nrwl/jest (builders,generators)
 #   @nrwl/linter (builders)
 #   @nrwl/workspace (builders,generators)
@@ -125,55 +124,6 @@ $ curl http://localhost:4201/
 
 
 ##
-### PROJETO REACT:
-##
-
-$ npm install --save-dev @nrwl/react@12.0.7
-
-$ npm list --depth=0
-# nx-monorepo-ui@0.0.0 /mnt/sda3/git-repositories/public/nx-monorepo-ui
-# ├── @nrwl/react@12.0.7
-# ├── @nrwl/cli@12.0.7
-# ├── @nrwl/tao@12.0.7
-# ├── @nrwl/workspace@12.0.7
-# ├── @types/node@14.14.33
-# ├── dotenv@8.2.0
-# ├── prettier@2.2.1
-# ├── ts-node@9.1.1
-# ├── tslib@2.2.0
-# └── typescript@4.1.5
-
-$ nx g @nrwl/react:app helloworld-react
-# ✔ Which stylesheet format would you like to use? · styled-components
-# ✔ Would you like to add React Router to this application? (y/N) · true
-
-$ nx list
-# >  NX  Installed plugins:
-# ...
-
-$ npm list --depth=0
-# nx-monorepo-ui@0.0.0 /mnt/sda3/git-repositories/public/nx-monorepo-ui
-# └── ...
-
-$ nx serve helloworld-react --port 4202
-
-$ curl http://localhost:4202/
-# <!DOCTYPE html>
-# <html lang="en">
-#   <head>
-#     <meta charset="utf-8" />
-#     <title>HelloworldReact</title>
-#     <base href="/">
-#     <meta name="viewport" content="width=device-width, initial-scale=1" />
-#     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-#   </head>
-#   <body>
-#     <div id="root"></div>
-#   <script src="runtime.js" defer></script><script src="polyfills.js" defer></script><script src="vendor.js" defer></script><script src="main.js" defer></script></body>
-# </html>
-
-
-##
 ### CRIAR LIBS:
 ##
 
@@ -183,14 +133,10 @@ $ nx g @nrwl/workspace:lib lib-shared
 # CRIAR LIB ANGULAR 
 $ nx g @nrwl/angular:lib lib-angular
 
-# CRIAR LIB REACT 
-$ nx g @nrwl/react:lib lib-react
-
 # Add on file ./tsconfig.base.json
 # "paths": {
 #   "@lib/shared": ["libs/lib-shared/src/index.ts"],
-#   "@lib/angular": ["libs/lib-angular/src/index.ts"],
-#   "@lib/react": ["libs/lib-react/src/index.ts"]
+#   "@lib/angular": ["libs/lib-angular/src/index.ts"]
 # }
 
 # ABRIR GRÁFICO DE DEPENDÊNCIAS
