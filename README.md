@@ -74,57 +74,6 @@ $ npm list --depth=0
 
 
 ##
-### PROJETO ANGULAR:
-##
-
-$ npm install -g @angular/cli@11.2.9
-
-$ npm install --save-dev @nrwl/angular@12.0.7
-
-$ npm list --depth=0
-# nx-monorepo-ui@0.0.0 /mnt/sda3/git-repositories/public/nx-monorepo-ui
-# ├── @nrwl/angular@12.0.7
-# ├── @nrwl/cli@12.0.7
-# ├── @nrwl/tao@12.0.7
-# ├── @nrwl/workspace@12.0.7
-# ├── @types/node@14.14.33
-# ├── dotenv@8.2.0
-# ├── prettier@2.2.1
-# ├── ts-node@9.1.1
-# ├── tslib@2.2.0
-# └── typescript@4.1.5
-
-$ nx g @nrwl/angular:app helloworld-angular
-# ✔ Which stylesheet format would you like to use? · scss
-# ✔ Would you like to configure routing for this application? (y/N) · true
-
-$ nx list
-# >  NX  Installed plugins:
-# ...
-
-$ npm list --depth=0
-# nx-monorepo-ui@0.0.0 /mnt/sda3/git-repositories/public/nx-monorepo-ui
-# └── ...
-
-$ nx serve helloworld-angular --port 4201
-
-$ curl http://localhost:4201/
-# <!DOCTYPE html>
-# <html lang="en">
-#   <head>
-#     <meta charset="utf-8"/>
-#     <title>HelloworldAngular</title>
-#     <base href="/"/>
-#     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-#     <link rel="icon" type="image/x-icon" href="favicon.ico"/>
-#   <link rel="stylesheet" href="styles.css"></head>
-#   <body>
-#     <nx-monorepo-ui-root></nx-monorepo-ui-root>
-#   <script src="runtime.js" defer></script><script src="polyfills.js" defer></script><script src="vendor.js" defer></script><script src="main.js" defer></script></body>
-# </html>
-
-
-##
 ### PROJETO REACT:
 ##
 
@@ -180,16 +129,12 @@ $ curl http://localhost:4202/
 # CRIAR LIB COMPARTILHADA
 $ nx g @nrwl/workspace:lib lib-shared
 
-# CRIAR LIB ANGULAR 
-$ nx g @nrwl/angular:lib lib-angular
-
 # CRIAR LIB REACT 
 $ nx g @nrwl/react:lib lib-react
 
 # Add on file ./tsconfig.base.json
 # "paths": {
 #   "@lib/shared": ["libs/lib-shared/src/index.ts"],
-#   "@lib/angular": ["libs/lib-angular/src/index.ts"],
 #   "@lib/react": ["libs/lib-react/src/index.ts"]
 # }
 
