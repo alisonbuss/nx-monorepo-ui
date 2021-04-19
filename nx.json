@@ -1,4 +1,8 @@
 {
+  "npmScope": "nx-monorepo-ui",
+  "affected": {
+    "defaultBase": "master"
+  },
   "implicitDependencies": {
     "package.json": {
       "dependencies": "*",
@@ -6,25 +10,18 @@
     },
     ".eslintrc.json": "*"
   },
-  "affected": {
-    "defaultBase": "master"
-  },
-  "npmScope": "nx-monorepo-ui",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ]
       }
     }
   },
-  "projects": {
-    "helloworld-angular": {
-      "tags": []
-    },
-    "helloworld-angular-e2e": {
-      "tags": [],
-      "implicitDependencies": ["helloworld-angular"]
-    }
-  }
+  "projects": {}
 }
