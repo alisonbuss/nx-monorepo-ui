@@ -21,6 +21,9 @@
     "helloworld-angular-e2e": {
       "tags": [],
       "implicitDependencies": ["helloworld-angular"]
-    }
+    },
+    "lib-shared": { "tags": [] },
+    "lib-angular": { "tags": [] },
+    "lib-react": { "tags": [] }
   }
 }

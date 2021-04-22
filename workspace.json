@@ -1,8 +1,6 @@
 {
   "version": 2,
-  "cli": {
-    "defaultCollection": "@nrwl/react"
-  },
+  "cli": { "defaultCollection": "@nrwl/react" },
   "defaultProject": "helloworld-react",
   "generators": {
     "@nrwl/react": {
@@ -11,13 +9,8 @@
         "linter": "eslint",
         "babel": true
       },
-      "component": {
-        "style": "styled-components"
-      },
-      "library": {
-        "style": "styled-components",
-        "linter": "eslint"
-      }
+      "component": { "style": "styled-components" },
+      "library": { "style": "styled-components", "linter": "eslint" }
     },
     "@nrwl/angular:application": {
       "style": "scss",
@@ -30,9 +23,7 @@
       "linter": "eslint",
       "unitTestRunner": "jest"
     },
-    "@nrwl/angular:component": {
-      "style": "scss"
-    }
+    "@nrwl/angular:component": { "style": "scss" }
   },
   "projects": {
     "helloworld-react": {
@@ -42,9 +33,7 @@
       "targets": {
         "build": {
           "executor": "@nrwl/web:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/helloworld-react",
             "index": "apps/helloworld-react/src/index.html",
@@ -86,28 +75,20 @@
         },
         "serve": {
           "executor": "@nrwl/web:dev-server",
-          "options": {
-            "buildTarget": "helloworld-react:build"
-          },
+          "options": { "buildTarget": "helloworld-react:build" },
           "configurations": {
-            "production": {
-              "buildTarget": "helloworld-react:build:production"
-            }
+            "production": { "buildTarget": "helloworld-react:build:production" }
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/helloworld-react/**/*.{ts,tsx,js,jsx}"
-            ]
+            "lintFilePatterns": ["apps/helloworld-react/**/*.{ts,tsx,js,jsx}"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/helloworld-react"
-          ],
+          "outputs": ["coverage/apps/helloworld-react"],
           "options": {
             "jestConfig": "apps/helloworld-react/jest.config.js",
             "passWithNoTests": true
@@ -136,9 +117,7 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/helloworld-react-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/helloworld-react-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -162,9 +141,7 @@
               "apps/helloworld-angular/src/favicon.ico",
               "apps/helloworld-angular/src/assets"
             ],
-            "styles": [
-              "apps/helloworld-angular/src/styles.scss"
-            ],
+            "styles": ["apps/helloworld-angular/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -199,9 +176,7 @@
         },
         "serve": {
           "executor": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "helloworld-angular:build"
-          },
+          "options": { "browserTarget": "helloworld-angular:build" },
           "configurations": {
             "production": {
               "browserTarget": "helloworld-angular:build:production"
@@ -210,9 +185,7 @@
         },
         "extract-i18n": {
           "executor": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "helloworld-angular:build"
-          }
+          "options": { "browserTarget": "helloworld-angular:build" }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
@@ -225,9 +198,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/helloworld-angular"
-          ],
+          "outputs": ["coverage/apps/helloworld-angular"],
           "options": {
             "jestConfig": "apps/helloworld-angular/jest.config.js",
             "passWithNoTests": true
@@ -256,9 +227,72 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
+            "lintFilePatterns": ["apps/helloworld-angular-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "lib-shared": {
+      "root": "libs/lib-shared",
+      "sourceRoot": "libs/lib-shared/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": { "lintFilePatterns": ["libs/lib-shared/**/*.ts"] }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/lib-shared"],
+          "options": {
+            "jestConfig": "libs/lib-shared/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "lib-angular": {
+      "projectType": "library",
+      "root": "libs/lib-angular",
+      "sourceRoot": "libs/lib-angular/src",
+      "prefix": "nx-monorepo-ui",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
             "lintFilePatterns": [
-              "apps/helloworld-angular-e2e/**/*.{js,ts}"
+              "libs/lib-angular/src/**/*.ts",
+              "libs/lib-angular/src/**/*.html"
             ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/lib-angular"],
+          "options": {
+            "jestConfig": "libs/lib-angular/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "lib-react": {
+      "root": "libs/lib-react",
+      "sourceRoot": "libs/lib-react/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/lib-react/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/lib-react"],
+          "options": {
+            "jestConfig": "libs/lib-react/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }

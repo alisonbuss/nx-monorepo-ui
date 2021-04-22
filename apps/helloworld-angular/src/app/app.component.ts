@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'helloworld-angular';
+
+  public readonly title: string = 'Hello World';
+
 }
